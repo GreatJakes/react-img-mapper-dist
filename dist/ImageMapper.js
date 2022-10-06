@@ -199,7 +199,7 @@ var ImageMapper = function (props) {
         var scale = widthProp && imageWidthProp && imageWidthProp > 0
             ? widthProp / imageWidthProp
             : 1;
-        if (responsive && parentWidth) {
+        if (responsive && parentWidth && imgRef.naturalWidth) {
             return coords.map(function (coord) { return coord / (imgRef.naturalWidth / parentWidth); });
         }
         return coords.map(function (coord) { return coord * scale; });
